@@ -22,9 +22,9 @@ Vue.prototype._ = _;
 
 // 开发环境导入api mock数据
 import { mockXHR } from '../mock'
-if(process.env.NODE_ENV == 'development'){
+// if(process.env.NODE_ENV == 'development'){
   mockXHR();
-}
+// }
 
 new Vue({ 
   router,

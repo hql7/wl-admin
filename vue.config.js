@@ -3,10 +3,13 @@
 let styleVariables = require('./src/style/variables.scss.js');
 
 module.exports = {
-  // publicPath: './',
+  // 将资源打包为相对路径
+  // publicPath: "././",
+  crossorigin: 'anonymous', // htmlWebpackPlugin
   devServer: {
     // host: '0.0.0.0',
     hot: true,
+    open: true, // 自动调用默认浏览器打开
     disableHostCheck: true,
     // port,
     overlay: {
