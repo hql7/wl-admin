@@ -47,6 +47,11 @@ const routes = [
         component: () => import('@/views/tour/penle/index.vue'),
       },
       {
+        path: "/tour/muslin",
+        name: "tour-muslin",
+        component: () => import('@/views/tour/muslin/index.vue'),
+      },
+      {
         path: "/ladder/juvenile",
         name: "ladder-juvenile",
         component: () => import('@/views/ladder/juvenile/index.vue'),

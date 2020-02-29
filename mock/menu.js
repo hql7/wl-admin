@@ -24,7 +24,7 @@ const menus = [
       {
         id: "1-4",
         title: "西塘之仙",
-        url: "/tour/muslin"
+        url: "/tour/muslin" 
       },
     ] // 菜单数据
   },
@@ -37,7 +37,7 @@ const menus = [
       {
         id: "2-1",
         title: "毛头少年",
-        url: "/ladder/juvenile"
+        url: "/ladder/juvenile" 
       },
       {
         id: "2-2",
