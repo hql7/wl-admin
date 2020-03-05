@@ -1,10 +1,10 @@
 import router from '@/router'
-import { sessionSet, sessionGet, sessionDel } from "@/util/storage"
+import { sessionSet, sessionDel } from "@/util/storage"
 export default {
   namespaced: true,
   state: {
-    keep_alive: sessionGet('keep_alive') || [], // 需要状态保持的页面
-    current: sessionGet('current') || "" // 当前active的页面
+    keep_alive: [], // 需要状态保持的页面
+    current: "" // 当前active的页面
   },
   mutations: {
     // 设置需要状态保持的页面
@@ -25,6 +25,10 @@ export default {
       // 当前只有一个页面 清空
       if (state.keep_alive.length === 1) {
         state.keep_alive = [];
+        state.current = '/index';
+        sessionSet('current', '/index');
+        sessionDel('keep_alive');
+        router.push('/index');
         return;
       }
       // 当前关闭active页面，页面有多个，取前一个或下一个
@@ -34,6 +38,7 @@ export default {
             let _next_index = i < len - 1 ? i + 1 : i - 1;
             state.current = state.keep_alive[_next_index].url;
             sessionSet('current', state.current);
+            router.push(state.current);
             break;
           }
         }
@@ -93,11 +98,11 @@ export default {
       sessionSet('keep_alive', state.keep_alive);
       sessionSet('current', state.current);
     },
-    // 关闭其他需要状态保持的页面
+    // 关闭全部需要状态保持的页面
     CLOSE_ALL_KEEP_ALIVE(state) {
       state.keep_alive = [];
-      state.current = '';
-      sessionDel('current');
+      state.current = '/index';
+      sessionSet('current', '/index');
       sessionDel('keep_alive');
       router.push('/index');
     },

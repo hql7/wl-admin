@@ -123,7 +123,7 @@ export default {
     },
     // 去首页
     gotoIndex(){
-      this.setCurrentPage('');
+      this.setCurrentPage('/index');
       this.$router.push('/index');
     },
     // 导入vuex action函数
