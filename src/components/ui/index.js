@@ -1,8 +1,8 @@
 
-import FtContainer from "./ft-container/";
-import FtContextmenu from "./ft-contextmenu/";
+import WlContainer from "./wl-container/";
+import WlContextmenu from "./wl-contextmenu/";
 
-const components = [FtContainer, FtContextmenu];
+const components = [WlContainer, WlContextmenu];
 
 const install = function (Vue) {
   components.forEach(component => {
@@ -16,6 +16,6 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  FtContainer,
-  FtContextmenu
+  WlContainer,
+  WlContextmenu
 };

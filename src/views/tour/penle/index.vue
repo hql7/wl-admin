@@ -1,7 +1,7 @@
 <template>
-  <ft-container>
+  <wl-container>
     蓬莱是我们的约定，当疫情结束，我们就见面吧
-  </ft-container>
+  </wl-container>
 </template>
 
 <script>

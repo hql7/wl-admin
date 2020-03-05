@@ -1,15 +1,15 @@
 <template>
   <div class="page-tabs">
     <!-- <div class="tab-box"> -->
-    <ft-contextmenu
+    <wl-contextmenu
       :visible.sync="contextmenu_show"
       :x="contextmenu.x"
       :y="contextmenu.y"
       :menu-list="contextmenu_list"
       @rowClick="contextMenuClick"
-    ></ft-contextmenu>
+    ></wl-contextmenu>
     <el-tabs
-      v-show="activeCurrent"
+      v-show="keepAlivePages.length > 0"
       :value="activeCurrent"
       closable
       type="card"

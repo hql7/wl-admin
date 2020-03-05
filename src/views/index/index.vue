@@ -1,3 +1,3 @@
 <template>
-  <ft-container>项目首页</ft-container>
+  <wl-container>项目首页</wl-container>
 </template>

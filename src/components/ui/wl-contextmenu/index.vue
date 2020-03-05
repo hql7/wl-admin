@@ -1,5 +1,5 @@
 <template>
-  <div class="ft-context-menu" v-if="flag" :style="style">
+  <div class="wl-context-menu" v-if="flag" :style="style">
     <ul class="menu-liet" v-if="useDefault">
       <li class="menu-item" v-for="item of menuList" :key="item.value" @click="handleMenuItem(item)">
         <i class="memu-item-icon" :class="item.icon"></i>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'ft-contextmenu',
+  name: 'wl-contextmenu',
   props: {
     visible: {
       type: Boolean,
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ft-context-menu {
+.wl-context-menu {
   position: absolute;
   padding: 5px 0;
   z-index: 2018;

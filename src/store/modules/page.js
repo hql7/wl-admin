@@ -8,9 +8,9 @@ export default {
   },
   mutations: {
     // 设置需要状态保持的页面
-    SET_KEEP_ALIVE(state, data) {
+    SET_KEEP_ALIVE(state, data, session = true) {
       state.keep_alive = data;
-      sessionSet('keep_alive', data);
+      session && sessionSet('keep_alive', data);
     },
     // 添加一个新的需要状态保持的页面
     ADD_KEEP_ALIVE(state, data) {
@@ -114,8 +114,10 @@ export default {
   },
   actions: {
     // 设置是否状态保持
-    setKeepPage({ commit }, data) {
-      commit('SET_KEEP_ALIVE', data)
+    setKeepPage({ commit }, data, session) {
+      if (Array.isArray(data)) {
+        commit('SET_KEEP_ALIVE', data, session)
+      }
     },
     // 添加一个新的需要状态保持的页面
     addKeepPage({ commit }, data) {
