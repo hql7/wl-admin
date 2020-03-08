@@ -19,7 +19,11 @@ function sessionSet(key, value) {
  */
 function sessionGet(key) {
   let _data = sessionStorage.getItem(key);
-  return JSON.parse(_data);
+  try {
+    return JSON.parse(_data)
+  } catch (e) {
+    return _data;
+  }
 }
 
 /**
@@ -52,7 +56,11 @@ function localSet(key, value) {
  */
 function localGet(key) {
   let _data = localStorage.getItem(key);
-  return JSON.parse(_data);
+  try {
+    return JSON.parse(_data)
+  } catch (e) {
+    return _data;
+  }
 }
 
 /**

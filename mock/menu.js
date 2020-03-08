@@ -1,6 +1,53 @@
 
 const menus = [
   {
+    id: "3",
+    title: 'Ui组件',
+    icon: "el-icon-monitor",
+    children: [
+      {
+        id: "3-1",
+        title: "Gantt甘特图",
+        url: "/ui/gantt"
+      },
+      {
+        id: "3-2",
+        title: "文件管理器",
+        url: "/ui/explorer"
+      },
+      {
+        id: "3-8",
+        title: "工作流流程图",
+        url: "/ui/workflow"
+      },
+      {
+        id: "3-3",
+        title: "BIM三维模型",
+        url: "/ui/bim"
+      },
+      {
+        id: "3-4",
+        title: "树形穿梭框",
+        url: "/ui/transfer"
+      },
+      {
+        id: "3-5",
+        title: "树形表格",
+        url: "/ui/table"
+      },
+      {
+        id: "3-6",
+        title: "树形下拉框",
+        url: "/ui/select"
+      },
+      {
+        id: "3-7",
+        title: "省市县三级联动",
+        url: "/ui/ssx"
+      },
+    ]
+  },
+  { 
     id: "1",
     title: "旅行计划",
     icon: "el-icon-video-camera",
@@ -24,7 +71,7 @@ const menus = [
       {
         id: "1-4",
         title: "西塘之仙",
-        url: "/tour/muslin" 
+        url: "/tour/muslin"
       },
     ] // 菜单数据
   },
@@ -37,7 +84,7 @@ const menus = [
       {
         id: "2-1",
         title: "毛头少年",
-        url: "/ladder/juvenile" 
+        url: "/ladder/juvenile"
       },
       {
         id: "2-2",

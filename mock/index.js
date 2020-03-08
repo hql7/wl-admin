@@ -1,10 +1,19 @@
 // 集中导出mock数据
 import Mock from 'mockjs'
 
-import user from './user'
-import menu from './menu'
+import menu from "./menu"
+import login from "./login"
 
-const mocks = [...user, ...menu]
+const mocks = [
+  {
+    intercept: true,
+    fetchs: login
+  },
+  {
+    intercept: true,
+    fetchs: menu
+  }
+];
 
 export function param2Obj(url) {
   const search = url.split('?')[1]
@@ -13,12 +22,12 @@ export function param2Obj(url) {
   }
   return JSON.parse(
     '{"' +
-      decodeURIComponent(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"')
-        .replace(/\+/g, ' ') +
-      '"}'
+    decodeURIComponent(search)
+      .replace(/"/g, '\\"')
+      .replace(/&/g, '","')
+      .replace(/=/g, '":"')
+      .replace(/\+/g, ' ') +
+    '"}'
   )
 }
 
@@ -26,7 +35,7 @@ export function mockXHR() {
   // mock patch
   // https://github.com/nuysoft/Mock/issues/300
   Mock.XHR.prototype.proxy_send = Mock.XHR.prototype.send
-  Mock.XHR.prototype.send = function() {
+  Mock.XHR.prototype.send = function () {
     if (this.custom.xhr) {
       this.custom.xhr.withCredentials = this.withCredentials || false
 
@@ -36,9 +45,9 @@ export function mockXHR() {
     }
     this.proxy_send(...arguments)
   }
-  
+
   function XHR2ExpressReqWrap(respond) {
-    return function(options) {
+    return function (options) {
       let result = null
       if (respond instanceof Function) {
         const { body, type, url } = options
@@ -56,21 +65,25 @@ export function mockXHR() {
   }
 
   for (const i of mocks) {
-    Mock.mock(new RegExp(i.url), i.type || 'get', XHR2ExpressReqWrap(i.response))
-  }
-}
-
-const responseFake = (url, type, respond) => {
-  
-  return {
-    url: new RegExp(`/mock${url}`),
-    type: type || 'get',
-    response(req, res) {
-      res.json(Mock.mock(respond instanceof Function ? respond(req, res) : respond))
+    if (i.intercept) {
+      for (const fetch of i.fetchs) {
+        Mock.mock(new RegExp(fetch.url, 'g'), fetch.type || 'get', XHR2ExpressReqWrap(fetch.response))
+      }
     }
   }
 }
 
-export default mocks.map(route => {
-  return responseFake(route.url, route.type, route.response)
-})
+// const responseFake = (url, type, respond) => {
+
+//   return {
+//     url: new RegExp(`/mock${url}`),
+//     type: type || 'get',
+//     response(req, res) {
+//       res.json(Mock.mock(respond instanceof Function ? respond(req, res) : respond))
+//     }
+//   }
+// }
+
+// export default mocks.map(route => {
+//   return responseFake(route.url, route.type, route.response)
+// })

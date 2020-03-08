@@ -8,21 +8,26 @@
         @click="setMenuCollapseStatus()"
       ></i>
     </div>
+    <div class="nav-main">wl-ui: 精美易用的复杂前端组件解决方案</div>
     <!-- 右侧操作区 -->
     <div class="nav-handle-box">
+      <i class="iconfont icon-github-outline nav-icon nav-handle-item" @click="goToGithub()"></i>
       <!-- 消息按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-bell"></i>
+      <i class="nav-icon nav-handle-item el-icon-bell" @click="notYetOpened()"></i>
       <!-- 全屏按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-rank" @click="handleFullScreen"></i>
+      <i class="nav-icon nav-handle-item el-icon-rank" @click="handleFullScreen()"></i>
       <!-- 用户名 -->
       <span class="nav-handle-item nav-user-name">{{user_name}}</span>
       <!-- 退出登录按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-switch-button"></i>
+      <i class="nav-icon nav-handle-item el-icon-switch-button" @click="logout()"></i>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import { localDel } from "@/util/storage";
+
 export default {
   name: "theNav",
   data() {
@@ -68,10 +73,19 @@ export default {
       }
       this.full_screen = !this.full_screen;
     },
+    goToGithub() {
+      window.location.href = "https://github.com/hql7";
+    },
     // 暂未开通，敬请期待
     notYetOpened() {
-      this.$message({});
-    }
+      this.$message("暂未开通，敬请期待");
+    },
+    logout() {
+      this.setToken("");
+      localDel(this.GLOBAL.project_key);
+      this.$router.push("/login");
+    },
+    ...mapActions("app", ["setToken"])
   }
 };
 </script>
@@ -98,6 +112,11 @@ export default {
 
   .nav-handle-item + .nav-handle-item {
     margin-left: 12px;
+  }
+
+  .nav-main {
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 </style>

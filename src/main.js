@@ -23,10 +23,14 @@ Vue.prototype._ = _;
 // 开发环境导入api mock数据
 import { mockXHR } from '../mock'
 // if(process.env.NODE_ENV == 'development'){
-  mockXHR();
+mockXHR();
 // }
 
-new Vue({ 
+// 导入鉴权系统
+import AUTH from '@/auth'
+AUTH();
+
+new Vue({
   router,
   store,
   render: h => h(App)

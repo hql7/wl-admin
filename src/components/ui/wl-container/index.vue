@@ -15,6 +15,16 @@
     <div class="wl-container-footer" v-if="$slots.footer">
       <slot name="footer"></slot>
     </div>
+    <!-- 网站默认脚部信息 -->
+    <footer class="wlui-footer">
+      本站只用于个人开发者学习浏览 ·
+      <a
+        class="beianhao"
+        rel="nofollow"
+        href="http://www.beian.miit.gov.cn"
+        target="_blank"
+      >网站备案号</a>
+    </footer>
   </div>
 </template>
 
@@ -33,14 +43,14 @@ export default {
 <style lang="scss">
 .wl-container {
   display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
   flex-direction: column;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
   padding: 8px;
 
   > .wl-container-scroll {
@@ -56,6 +66,18 @@ export default {
     flex: 1;
     flex-grow: 1;
     flex-shrink: 1;
+  }
+
+  .wlui-footer {
+    text-align: center;
+    font-size: 14px;
+    background: #ebeef5;
+    line-height: 26px;
+    color: #909399;
+    border-radius: 2px;
+    > .beianhao {
+      color: #909399;
+    }
   }
 }
 </style>
