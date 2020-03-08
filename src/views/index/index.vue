@@ -41,15 +41,25 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
+  computed: {
+    // 导入vuex菜单数据，菜单折叠状态
+    ...mapGetters(["menu_list"])
+  },
   methods: {
     /**
      * 路由跳转
      * url 地址
      */
     routerGo(url) {
+      let _item = this.menu_list.find(i => i.url === url);
+      this.addKeepPage(_item); // 添加历史记录
+      this.setCurrentPage(url); // 记录当前页
       this.$router.push(url);
-    }
+    },
+    ...mapActions("page", ["addKeepPage", "setCurrentPage"])
   }
 };
 </script>

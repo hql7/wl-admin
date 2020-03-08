@@ -23,6 +23,9 @@ import {
   Icon,
   Message,
   MessageBox,
+  Table,
+  TableColumn,
+  DatePicker
 } from "element-ui";
 
 
@@ -47,6 +50,9 @@ Vue.use(Select);
 Vue.use(Tabs);
 Vue.use(TabPane);
 Vue.use(Icon);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(DatePicker);
 
 /**
  * message方法 默认可关闭

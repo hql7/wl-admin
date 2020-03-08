@@ -2,10 +2,10 @@
  * auth：weilan
  * 异步推入鉴权路由
  */
-
 import router from "@/router/index";
 import nextRouter from "@/router/next-router"; // 导入非菜单鉴权路由
 import { flattenDeep } from '@/util/array'; // 导入数组操作函数
+import store from "@/store";
 
 /**
  * 异步推入鉴权路由
@@ -44,6 +44,7 @@ function addUserRouter(data) {
   });
   // 推入需要异步加载的，非服务端获取的功能性页面
   routerBox.push(...nextRouter);
+  store.dispatch('menu/setUserMenuList', menu);
   // 最后创建err视图盒子，解决放在前面路由会直接跳向404问题
   let errorBox = {
     path: "*",

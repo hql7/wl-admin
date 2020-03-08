@@ -90,7 +90,6 @@ export default {
   methods: {
     // 菜单路由跳转
     goto(item) {
-      console.log(item)
       this.addKeepPage(item); // 添加历史记录
       this.setCurrentPage(item.url); // 记录当前页
       this.$router.push(item.url);
