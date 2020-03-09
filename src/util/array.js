@@ -1,6 +1,6 @@
 /**
  * auth: weilan
- * github: https://github.com/hql7
+ * time: https://github.com/hql7
  * description: 一个数组操作函数库
  */
 

@@ -1,3 +1,3 @@
 <template>
-  <div>403</div>
+  <wl-container>403</wl-container>
 </template>

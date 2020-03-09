@@ -14,7 +14,7 @@ export default {
     SET_COLLAPSE_STATUS(state, data) {
       state.is_collapse = data;
     },
-    // 设置折叠状态
+    // 设置一维菜单数据
     SET_MENU_LIST(state, data) {
       state.menu_list = data;
     },

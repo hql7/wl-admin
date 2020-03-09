@@ -1,3 +1,3 @@
 <template>
-  <wl-container>登录</wl-container>
+  <wl-container>注册</wl-container>
 </template>
