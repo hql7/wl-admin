@@ -67,7 +67,7 @@ export function mockXHR() {
   for (const i of mocks) {
     if (i.intercept) {
       for (const fetch of i.fetchs) {
-        Mock.mock(new RegExp(fetch.url, 'g'), fetch.type || 'get', XHR2ExpressReqWrap(fetch.response))
+        Mock.mock(new RegExp(fetch.url), fetch.type || 'get', XHR2ExpressReqWrap(fetch.response))
       }
     }
   }

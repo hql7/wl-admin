@@ -1,3 +1,35 @@
 <template>
-  <wl-container>云台山的美，在于山峰是你的影，余晖是你的眸，夕阳落于你的发间</wl-container>
+  <wl-container>
+    <div class="msg">打开f12 查看localStorage数据变化</div>
+    <div class="msg">
+      <el-button type="primary" @click="addData()">存数据</el-button>
+      <el-button type="info" @click="getData()">取数据</el-button>
+      <el-button type="danger" @click="delData()">删数据</el-button>
+    </div>
+  </wl-container>
 </template>
+
+<script>
+export default {
+  name: "wl-explorer",
+  methods: {
+    addData() {
+      this.wldb.push("posts", { title: "lowdb", name: "weilan" });
+    },
+    getData() {
+      let msg = this.wldb.find("posts", { title: "lowdb" });
+      console.log(msg);
+    },
+    delData() {
+      this.wldb.remove("posts", { title: "lowdb" });
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+.msg {
+  text-align: center;
+  padding: 100px;
+}
+</style>

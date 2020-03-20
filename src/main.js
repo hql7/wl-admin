@@ -22,6 +22,10 @@ Vue.prototype.GLOBAL = global_;
 import _ from 'lodash';
 Vue.prototype._ = _;
 
+// 导入封装后的本地数据库lowdb类
+import wldb from "./db"
+Vue.prototype.wldb = wldb;
+
 // 开发环境导入api mock数据
 import { mockXHR } from '../mock'
 // if(process.env.NODE_ENV == 'development'){
