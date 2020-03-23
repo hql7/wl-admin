@@ -23,7 +23,7 @@ const routes = [
     path: "/register",
     name: "register",
     meta: {
-      authentication: false, // 不进行身份验证
+      withoutAuth: true, // 不进行身份验证
     },
     component: () => import('../views/register/index.vue')
   },
@@ -32,7 +32,7 @@ const routes = [
     path: "/err-404",
     name: "err404",
     meta: {
-      authentication: false
+      withoutAuth: true
     },
     component: () => import('../views/error/404.vue')
   },
@@ -41,7 +41,7 @@ const routes = [
     path: "/err-403",
     name: "err403",
     meta: {
-      authentication: false
+      withoutAuth: true
     },
     component: () => import('../views/error/403.vue')
   },

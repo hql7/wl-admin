@@ -50,7 +50,7 @@ function registerRouteGuard() {
       }
     } else {
       // 无登录状态时重定向至登录 或可进入无需登录状态路径
-      if (to.path == "/login" || !to.meta.authentication) {
+      if (to.path == "/login" || to.meta.true) {
         next();
       } else {
         next({

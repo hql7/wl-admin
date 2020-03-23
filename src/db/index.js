@@ -22,6 +22,8 @@ class Wldb {
     this.db.defaults(defaults).write();
   }
 
+  //---------------------------------------以下为数组操作方法-----------------------------------------
+
   /**
    * 将数组内添加一条数据
    * @param {*} collection 集合key
@@ -46,7 +48,29 @@ class Wldb {
   remove(collection, predicate) {
     this.db.get(collection).remove(predicate).write()
   }
+
+  //---------------------------------------以下为对象操作方法-----------------------------------------
+
+  /**
+   * 设置对象的键值
+   * @param {*} path 路径 如'user.name'会在user下创建key为name的属性
+   * @param {*} value 值
+   */
+  set(path, value) {
+    this.db.set(path, value).write()
+  }
+
+  //---------------------------------------以下为字符串操作方法-----------------------------------------
+
+  /**
+   * 设置字符串的值
+   * @param {*} key 键
+   * @param {*} value 值是一个带返回值的函数
+   */
+  update(key, value) {
+    this.db.update(key, value).write()
+  }
 }
 
-const wldb = new Wldb('wldb', {}, { posts: [] });
+const wldb = new Wldb('wldb', {}, { posts: [], user: {}, color: "" });
 export default wldb;
