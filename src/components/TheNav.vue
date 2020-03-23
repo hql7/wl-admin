@@ -82,10 +82,13 @@ export default {
     },
     logout() {
       this.setToken("");
+      this.setKeepPage([], true);
+      this.setCurrentPage("");
       localDel(this.GLOBAL.project_key);
       this.$router.push("/login");
     },
-    ...mapActions("app", ["setToken"])
+    ...mapActions("app", ["setToken"]),
+    ...mapActions("page", ["setKeepPage", "setCurrentPage"])
   }
 };
 </script>
