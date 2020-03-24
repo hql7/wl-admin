@@ -29,7 +29,7 @@ export default {
       this.wldb.set("user.name", "weilan");
     },
     addStr() {
-      this.wldb.update("color", n => 3);
+      this.wldb.update("color", () => 3);
     }
   }
 };
