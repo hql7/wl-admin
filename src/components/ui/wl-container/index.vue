@@ -21,9 +21,9 @@
       <a
         class="beianhao"
         rel="nofollow"
-        href="http://www.beian.miit.gov.cn"
+        href="http://www.beian.miit.gov.cn/"
         target="_blank"
-      >网站备案号</a>
+      >豫ICP备20007340号</a>
     </footer>
   </div>
 </template>

@@ -96,7 +96,7 @@ body {
   > .main-container-view {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
     height: calc(100% - #{$header-height});
     background: $main-base-color;

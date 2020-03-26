@@ -25,10 +25,24 @@ import {
   MessageBox,
   Table,
   TableColumn,
-  DatePicker
+  DatePicker,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Upload,
+  Tree,
+  Popover,
+  Autocomplete
 } from "element-ui";
 
 
+Vue.use(Autocomplete);
+Vue.use(Popover);
+Vue.use(Tree);
+Vue.use(Upload);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
 Vue.use(Menu);
 Vue.use(Button);
 Vue.use(Submenu);

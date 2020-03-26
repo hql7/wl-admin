@@ -33,7 +33,7 @@ mockXHR();
 // }
 
 // 测试proxy
-import "./util/proxy";
+// import "./util/proxy";
 
 // 导入鉴权系统
 import AUTH from '@/auth'

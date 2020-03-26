@@ -125,9 +125,13 @@ export default {
   .el-tabs--card > .el-tabs__header {
     background: #f7f7f7;
     // margin-bottom: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     .el-tabs__item.is-active {
       border-bottom-color: $main-base-color;
+    }
+    .el-tabs__item {
+      height: 34px;
+      line-height: 34px;
     }
   }
 }
