@@ -7,7 +7,7 @@ The main structure of the framework for the Vue project, the background manageme
 
 ### [在线访问](http://wlui.com.cn/)
 
-![预览](./src/assets/images/demo.png)
+![预览](/src/assets/images/demo.png)
 
 ### Features 功能
 - [x] 前端鉴权，基于用户授权的菜单来匹配路由异步推入，精确到按钮的鉴权方案
@@ -43,9 +43,9 @@ q群：1058847321   &
 
 ## Donate & 咖啡
 <div align="center">
-<img src="./src/assets/images/apply.jpg" height="330" width="220" >
+<img src="/src/assets/images/apply.jpg" height="330" width="220" >
 
-<img src="./src/assets/images/wx.jpg" height="330" width="220" >
+<img src="/src/assets/images/wx.jpg" height="330" width="220" >
  </div>
 
 ### 精美易用的复杂前端组件解决方案
