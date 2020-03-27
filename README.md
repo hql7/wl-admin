@@ -1,13 +1,52 @@
 # wl-admin
 
-用于vue项目的框架主体结构，后台管理系统快速建站模板。   
-The main structure of the framework for the Vue project, the background management system quick site template.    
+用于vue项目的框架主体结构，后台管理系统快速建站模板，提供前端项目大多都需要用到的主要功能。   
+The main structure of the framework for the Vue project, the background management system quick site template.Provide spower to provide the main features most of the front-end projects need
 
-### 功能
-1. 前端路由鉴权，基于addRoutes的异步路由推入
-2. 易用易懂效果炫酷的界面框架
-3. 微前端
-4. 对象字段映射
+## Introduction 介绍
+
+### [在线访问](http://wlui.com.cn/)
+
+![预览](./src/assets/images/demo.png)
+
+### Features 功能
+- [x] 前端鉴权，基于用户授权的菜单来匹配路由异步推入，精确到按钮的鉴权方案
+- [x] 提供mock数据用法及教程
+- [x] 提供lowdb小型js数据库local存储方案
+- [x] 内置复杂组件
+  - [x] Gantt 甘特图组件
+  - [x] Explorer 文件管理器，云盘网盘组件
+  - [ ] BIM 三维模型浏览组件(待迁入)
+  - [ ] 树形穿梭框(待迁入)
+  - [ ] 树形下拉框(待迁入)
+  - [ ] 树形表格(待迁入)
+  - [ ] 省市县地址(待迁入)
+  - [ ] 工作流流程图组件(开发中)
+
+### 启动
+
+```
+npm install 
+
+npm run serve
+
+npm run build
+```
+
+## About & 支持
+q群：1058847321   &
+[Github](https://github.com/hql7)   &
+[掘金](https://juejin.im/user/591d141e0ce46300692184a4)   &
+[segmentfault](https://segmentfault.com/u/weilan_595deafa69d76)   &
+[csdn](https://blog.csdn.net/qq_15390381)   &
+[语雀](https://www.yuque.com/huoqilei)
+
+## Donate & 咖啡
+<div align="center">
+<img src="./src/assets/images/apply.jpg" height="330" width="220" >
+
+<img src="./src/assets/images/wx.jpg" height="330" width="220" >
+ </div>
 
 ### 精美易用的复杂前端组件解决方案
 1. wl-gantt   

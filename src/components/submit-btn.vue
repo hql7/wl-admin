@@ -41,7 +41,7 @@ export default {
     // 大小
     size:{
       type: String,
-      default: "medium"
+      default: "small"
     }
   },
   methods: {

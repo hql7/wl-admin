@@ -3,6 +3,7 @@ import Mock from 'mockjs'
 
 import menu from "./menu"
 import login from "./login"
+import explorer from "./explorer"
 
 const mocks = [
   {
@@ -12,6 +13,10 @@ const mocks = [
   {
     intercept: true,
     fetchs: menu
+  },
+  {
+    intercept: true,
+    fetchs: explorer
   }
 ];
 

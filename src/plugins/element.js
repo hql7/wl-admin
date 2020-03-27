@@ -32,10 +32,12 @@ import {
   Upload,
   Tree,
   Popover,
-  Autocomplete
+  Autocomplete,
+  Checkbox
 } from "element-ui";
 
 
+Vue.use(Checkbox);
 Vue.use(Autocomplete);
 Vue.use(Popover);
 Vue.use(Tree);

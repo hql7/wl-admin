@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <wl-container>
     <wlExplorer
       ref="wl-explorer-cpt"
       :headerDropdown="headerHandle"
@@ -9,60 +9,56 @@
       :folderType="rource_type"
       :data="file_table_data"
       :props="explorer_prop"
+      size="small"
       @handleFolder="handleFolder"
       @search="fileSearch"
       @del="fileDel"
       @closeFade="closeOtherLayout(fade)"
     >
       <!-- 操作文件夹滑入区 -->
-      <fadeIn v-show="fade.folder">
-        <h3 class="edit-header">
-          <p>{{folder_form.Id?'编辑':'新增'}}文件夹</p>
-        </h3>
-        <el-scrollbar class="scroll">
-          <el-form
-            size="medium"
-            ref="folder_form"
-            label-position="top"
-            :model="folder_form"
-            :rules="folder_rules"
-            class="folder_form rule-form"
-            @keyup.enter.native="submitFolderFrom('folder_form')"
-          >
-            <el-form-item label="文件路径" prop="ParentId">
-              <wlTreeSelect
-                class="u-full"
-                nodeKey="Id"
-                placeholder="请选择文件路径"
-                :props="tree_select_prop"
-                :data="tree_folder_list"
-                v-model="folder_form.ParentId"
-              ></wlTreeSelect>
-            </el-form-item>
-            <el-form-item label="文件夹名称 " prop="Name">
-              <el-input v-model="folder_form.Name" placeholder="请输入文件夹名称"></el-input>
-            </el-form-item>
-            <el-form-item label="备注说明" prop="Describe">
-              <el-input
-                :rows="3"
-                type="textarea"
-                v-model="folder_form.Describe"
-                placeholder="请输入备注说明"
-              ></el-input>
-            </el-form-item>
-          </el-form>
-        </el-scrollbar>
-        <div class="submit-btn-box">
+      <wl-fadein :show="fade.folder">
+        <span slot="header">{{folder_form.Id?'编辑':'新增'}}文件夹</span>
+        <el-form
+          ref="folder_form"
+          label-position="top"
+          :model="folder_form"
+          :rules="folder_rules"
+          class="folder_form rule-form"
+          @keyup.enter.native="submitFolderFrom('folder_form')"
+        >
+          <el-form-item label="文件路径" prop="ParentId">
+            <wlTreeSelect
+              size="small"
+              class="u-full"
+              nodeKey="Id"
+              placeholder="请选择文件路径"
+              :props="tree_select_prop"
+              :data="tree_folder_list"
+              v-model="folder_form.ParentId"
+            ></wlTreeSelect>
+          </el-form-item>
+          <el-form-item label="文件夹名称 " prop="Name">
+            <el-input v-model="folder_form.Name" placeholder="请输入文件夹名称"></el-input>
+          </el-form-item>
+          <el-form-item label="备注说明" prop="Describe">
+            <el-input
+              :rows="3"
+              type="textarea"
+              v-model="folder_form.Describe"
+              placeholder="请输入备注说明"
+            ></el-input>
+          </el-form-item>
+        </el-form>
+        <div slot="footer">
           <submit-btn @btn="submitFolderFrom('folder_form')" :status="load.folder"></submit-btn>
-          <el-button size="medium" @click="fade.folder = false">取消</el-button>
+          <el-button @click="fade.folder = false">取消</el-button>
         </div>
-      </fadeIn>
+      </wl-fadein>
     </wlExplorer>
-  </div>
+  </wl-container>
 </template>
 
 <script>
-import fadeIn from "@/components/fade-in"; // 导入文件管理器
 import submitBtn from "@/components/submit-btn"; // 导入防抖提交组件
 import { closeOtherLayout } from "@/util"; // 导入关闭其他弹出类视图函数
 import { arrayToTree } from "@/util/array"; // 导入关闭其他弹出类视图函数
@@ -76,7 +72,6 @@ const apiok = 200;
 export default {
   name: "wl-explorer",
   components: {
-    fadeIn,
     submitBtn
   },
   data() {
@@ -207,8 +202,8 @@ export default {
     // 获取文件夹列表
     getFileList() {
       getFileListApi().then(({ data }) => {
-        if (data.StatusCode === apiok) {
-          this.file_table_data = data.Data || [];
+        if (data.code === apiok) {
+          this.file_table_data = data.data || [];
         }
       });
     },
@@ -222,12 +217,15 @@ export default {
       this.path = file;
       this.fade.folder = true;
       if (type === "add") {
-        this.$refs["folder_form"].resetFields();
+        this.$nextTick(() => {
+          this.$refs["folder_form"].resetFields();
+        });
         this.folder_form.Id = "";
         this.folder_form.ParentId = file.id;
         return;
       }
       this.child_act_saved = act;
+      this.folder_form = { ...act };
     },
     // 提交文件夹表单
     submitFolderFrom(formName) {
@@ -236,7 +234,7 @@ export default {
           this.load.folder = true;
           setTimeout(() => {
             this.load.folder = false;
-            // let res_data = data.Data;
+            // let res_data = data.data;
             let res_data = this.folder_form; // 由表单数据模拟服务器返回数据，此处应有服务器返回对应实体
             res_data.EditTime = res_data.CreateTime = "2019-11-11T11:11:11";
             res_data.Type = 1;
@@ -308,13 +306,13 @@ export default {
         FolderFileIds: normal_data_file
       };
       delFileApi(_data).then(({ data }) => {
-        if (data.StatusCode === apiok) {
+        if (data.code === apiok) {
           this.file_table_data = this.file_table_data.filter(
             i => ![...normal_data_file, ...normal_data_folder].includes(i.Id)
           );
           this.$message({
             showClose: true,
-            message: data.Message,
+            message: data.message,
             type: "success"
           });
         }
@@ -323,8 +321,8 @@ export default {
     // 获取所有文件夹
     getAllFolders() {
       getAllFoldersApi().then(({ data }) => {
-        if (data.StatusCode === apiok) {
-          this.all_folder_list = data.Data || [];
+        if (data.code === apiok) {
+          this.all_folder_list = data.data || [];
           let _list = [...this.all_folder_list];
           let options = {
             id: this.explorer_prop.pathId,
