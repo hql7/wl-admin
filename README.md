@@ -42,7 +42,7 @@ q群：1058847321   &
 [语雀](https://www.yuque.com/huoqilei)
 
 ## Donate & 咖啡
-<div align="center">
+<div>
 <img src="/src/assets/images/apply.jpg" height="330" width="220" >
 
 <img src="/src/assets/images/wx.jpg" height="330" width="220" >
