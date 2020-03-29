@@ -8,7 +8,10 @@ import WlSelect from "wl-vue-select";
 import "wl-vue-select/lib/wl-vue-select.css"
 import WlTreeTransfer from 'wl-tree-transfer' 
 import 'wl-tree-transfer/lib/wl-tree-transfer.css' 
+import wlBimViewer from "wl-bim-viewer";
+import "wl-bim-viewer/lib/wl-bim-viewer.css"
 
+Vue.use(wlBimViewer);
 Vue.use(WlTreeTransfer)
 Vue.use(WlSelect);
 Vue.use(WlExplorer);

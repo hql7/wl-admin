@@ -1,14 +1,8 @@
 <template>
-  <el-button
-    :size="size"
-    :type="type"
-    :plain="plain"
-    v-if="status"
-    icon="el-icon-loading"
-  ></el-button>
-  <el-button :size="size" :type="type" :plain="plain" v-else @click="submit()"
-    ><slot>保存</slot></el-button
-  >
+  <el-button :size="size" :type="type" :plain="plain" v-if="status" icon="el-icon-loading"></el-button>
+  <el-button :size="size" :type="type" :plain="plain" v-else @click="submit()">
+    <slot>保存</slot>
+  </el-button>
 </template>
 
 <script>
@@ -39,16 +33,20 @@ export default {
       default: false
     },
     // 大小
-    size:{
+    size: {
       type: String,
       default: "small"
     }
   },
   methods: {
     // 节流输出
-    submit: debounce(function() {
-      this.$emit("btn");
-    }, 2000)
+    submit: debounce(
+      function() {
+        this.$emit("btn");
+      },
+      1500,
+      true
+    )
   }
 };
 </script>
