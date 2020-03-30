@@ -16,8 +16,8 @@ The main structure of the framework for the Vue project, the background manageme
 - [x] 内置复杂组件
   - [x] Gantt 甘特图组件
   - [x] Explorer 文件管理器，云盘网盘组件
-  - [ ] BIM 三维模型浏览组件(待迁入)
-  - [ ] 树形穿梭框(待迁入)
+  - [x] BIM 三维模型浏览组件
+  - [x] 树形穿梭框
   - [ ] 树形下拉框(待迁入)
   - [ ] 树形表格(待迁入)
   - [ ] 省市县地址(待迁入)
@@ -40,6 +40,9 @@ q群：1058847321   &
 [segmentfault](https://segmentfault.com/u/weilan_595deafa69d76)   &
 [csdn](https://blog.csdn.net/qq_15390381)   &
 [语雀](https://www.yuque.com/huoqilei)
+
+### 更新日志
+> 2020.03.30 增加bim浏览组件，树形穿梭框组件
 
 ## Donate & 咖啡
 <div>
