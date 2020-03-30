@@ -17,7 +17,7 @@
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
     "vuex": "^3.1.2",
-    "wl-bim-viewer": "^1.0.0",
+    "wl-bim-viewer": "^1.1.0",
     "wl-explorer": "^0.1.6",
     "wl-gantt": "^1.0.1",
     "wl-tree-transfer": "^1.0.8",
