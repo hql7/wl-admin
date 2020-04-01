@@ -30,11 +30,11 @@ const menus = [
         title: "树形穿梭框",
         url: "/ui/transfer"
       },
-      {
+      /* {
         id: "3-5",
         title: "树形表格",
         url: "/ui/table"
-      },
+      }, */
       {
         id: "3-6",
         title: "树形下拉框",

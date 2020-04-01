@@ -33,10 +33,14 @@ import {
   Tree,
   Popover,
   Autocomplete,
-  Checkbox
+  Checkbox,
+  Tag,
+  Cascader
 } from "element-ui";
 
 
+Vue.use(Tag);
+Vue.use(Cascader);
 Vue.use(Checkbox);
 Vue.use(Autocomplete);
 Vue.use(Popover);

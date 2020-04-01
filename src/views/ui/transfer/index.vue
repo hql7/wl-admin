@@ -2,7 +2,7 @@
   <wl-container>
     <h4 class="hello" slot="header">
       <label>请打开f12查看移动数据</label>
-      <el-button class="margin-left" type="info" plain @click="changeMode">当前模式：{{ mode }}</el-button>
+      <el-button class="margin-left" type="success" plain @click="changeMode">当前模式：{{ mode }}</el-button>
       <el-button @click="clearChecked()">清除选中</el-button>
     </h4>
     <div class="transfet-box">
