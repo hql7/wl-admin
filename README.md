@@ -18,9 +18,8 @@ The main structure of the framework for the Vue project, the background manageme
   - [x] Explorer 文件管理器，云盘网盘组件
   - [x] BIM 三维模型浏览组件
   - [x] 树形穿梭框
-  - [ ] 树形下拉框(待迁入)
-  - [ ] 树形表格(待迁入)
-  - [ ] 省市县地址(待迁入)
+  - [x] 树形下拉框(待迁入)
+  - [x] 省市县地址(待迁入)
   - [ ] 工作流流程图组件(开发中)
 
 ### 启动
