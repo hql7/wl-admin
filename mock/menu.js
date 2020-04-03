@@ -30,15 +30,15 @@ const menus = [
         title: "树形穿梭框",
         url: "/ui/transfer"
       },
-      /* {
-        id: "3-5",
-        title: "树形表格",
-        url: "/ui/table"
-      }, */
       {
         id: "3-6",
         title: "树形下拉框",
         url: "/ui/select"
+      },
+      {
+        id: "3-5",
+        title: "动态表格",
+        url: "/ui/table"
       },
       {
         id: "3-7",
@@ -47,7 +47,7 @@ const menus = [
       },
     ]
   },
-  { 
+  {
     id: "1",
     title: "旅行计划",
     icon: "el-icon-video-camera",

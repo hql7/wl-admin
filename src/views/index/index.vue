@@ -20,8 +20,8 @@
       </div>
       <div class="item-box">
         <el-button type="danger" plain @click="routerGo('/ui/transfer')">树形穿梭框</el-button>
-        <el-button type="danger" plain @click="routerGo('/ui/table')">树形表格</el-button>
         <el-button type="danger" plain @click="routerGo('/ui/select')">树形下拉框</el-button>
+        <el-button type="danger" plain @click="routerGo('/ui/table')">动态表格</el-button>
         <el-button type="danger" plain @click="routerGo('/ui/ssx')">省市县三级联动</el-button>
       </div>
     </div>

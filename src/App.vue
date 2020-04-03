@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
-@import '~@/assets/css/clear.css';
-@import '~@/style/animate/transition.scss';
+@import "~@/assets/css/clear.css";
+@import "~@/style/animate/transition.scss";
+@import "~@/style/style/style.scss";
 
-html,body{
+html,
+body {
   height: 100%;
 
-  >#app{
+  > #app {
     position: absolute;
     top: 0;
     right: 0;
