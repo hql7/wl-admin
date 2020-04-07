@@ -46,10 +46,9 @@ q群：1058847321   &
 
 ## Donate & 咖啡
 <div>
-<img src="/src/assets/images/apply.jpg" height="330" width="220" >
-
-<img src="/src/assets/images/wx.jpg" height="330" width="220" >
- </div>
+  <img src="/src/assets/images/apply.jpg" height="330" width="220" >
+  <img src="/src/assets/images/wx.jpg" height="330" width="220" >
+</div>
 
 ### 精美易用的复杂前端组件解决方案
 1. wl-gantt   
