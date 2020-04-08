@@ -19,7 +19,7 @@
     "vuex": "^3.1.2",
     "wl-address": "^0.2.3",
     "wl-bim-viewer": "^1.1.0",
-    "wl-explorer": "^0.1.6",
+    "wl-explorer": "^0.1.7",
     "wl-gantt": "^1.0.1",
     "wl-tree-transfer": "^1.0.8",
     "wl-vue-select": "^0.5.1"
