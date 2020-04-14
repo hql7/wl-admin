@@ -20,7 +20,7 @@
       <el-tab-pane
         v-for="page in keepAlivePages"
         :key="page.url"
-        :label="page.title "
+        :label="page.title"
         :name="page.url"
       />
     </el-tabs>
