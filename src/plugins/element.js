@@ -39,9 +39,11 @@ import {
   Cascader,
   Row,
   Col,
+  Loading
 } from "element-ui";
 
-
+Vue.prototype.$loading = Loading.service;
+Vue.use(Loading.directive);
 Vue.use(Row);
 Vue.use(Col);
 Vue.use(Tag);
