@@ -122,7 +122,7 @@ export default {
     // 添加一个新的需要状态保持的页面
     addKeepPage({ commit }, data) {
       commit('ADD_KEEP_ALIVE', data)
-    },
+    }, 
     // 关闭一个状态保持内的页面
     closeKeepPage({ commit }, data) {
       commit('CLOSE_KEEP_ALIVE', data)

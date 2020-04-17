@@ -36,15 +36,6 @@ const routes = [
     },
     component: () => import('../views/error/404.vue')
   },
-  // 403
-  {
-    path: "/err-403",
-    name: "err403",
-    meta: {
-      withoutAuth: true
-    },
-    component: () => import('../views/error/403.vue')
-  },
 ]
 
 const createRouter = () => new VueRouter({

@@ -1,7 +1,9 @@
+import settings from "@/config/settings"
 export default {
   namespaced: true,
   state: {
-    is_collapse: false, // 折叠状态
+    is_collapse: settings.menu.isCollapse, // 折叠状态
+    unique_opened: settings.menu.uniqueOpened, // 手风琴模式
     menu: [], // 菜单数据
     menu_list: [], // 菜单一维数组
   },

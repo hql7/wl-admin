@@ -1,7 +1,9 @@
+import settings from "@/config/settings"
+
 export default {
   namespaced: true,
   state: {
-    size: 10,  // 分页 页大小
+    size: settings.pagination.size,  // 分页 页大小
     token: '', // token
   },
   mutations: {
