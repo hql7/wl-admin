@@ -48,6 +48,18 @@ const menus = [
     ]
   },
   {
+    id: "4",
+    title: '小功能',
+    icon: "el-icon-suitcase",
+    children: [
+      {
+        id: "4-1",
+        title: "时差计算",
+        url: "/suitcase/time"
+      }
+    ]
+  },
+  {
     id: "1",
     title: "旅行计划",
     icon: "el-icon-video-camera",
@@ -98,7 +110,7 @@ const menus = [
 export default [
   {
     url: '/Api/GetMenusByUserId',
-    type: 'post',
+    type: 'get',
     response: () => {
       return {
         code: 200,

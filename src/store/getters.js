@@ -1,5 +1,6 @@
 const getters = {
   menu: state => state.menu.menu,
+  permissions: state => state.menu.permissions,
   menu_list: state => state.menu.menu_list,
   size: state => state.app.size,
   token: state => state.app.token,

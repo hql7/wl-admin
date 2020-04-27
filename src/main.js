@@ -1,16 +1,13 @@
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import vueRender from "./render"
+import { Storage } from "wl-core"
 
 Vue.config.productionTip = false;
-
 
 // 按需导入element-ui
 import "./plugins/element.js";
 // 导入wl-ui
 import "./plugins/wlui.js";
-
 // 导入需要全局注册的公共ui组件
 import "./components/ui/install";
 
@@ -20,27 +17,19 @@ Vue.prototype.GLOBAL = global_;
 
 // 导入主工具库lodash
 import _ from 'lodash';
-Vue.prototype._ = _;
-
-// 导入封装后的本地数据库lowdb类
-import wldb from "./db"
-Vue.prototype.wldb = wldb;
+Vue.prototype.$_ = _;
 
 // 开发环境导入api mock数据
-import { mockXHR } from '../mock'
-// if(process.env.NODE_ENV == 'development'){
-mockXHR();
-// }
+import '../mock/install'
 
-// 测试proxy
-// import "./util/proxy";
+// 导入封装后的本地数据库lowdb类
+/* import wldb from "./db"
+Vue.prototype.wldb = wldb; */
 
-// 导入鉴权系统
-import AUTH from '@/auth'
-AUTH();
+const testToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiZXhwIjoxNzM1Njg5NjAwLCJpYXQiOjE1MTYyMzkwMjJ9.OH5WhPuKPoG6fwwEDWi_SLRnu0QQfvx-Rji6fL3cHNU'
+const hadToken = Storage.get('token');
+if (!hadToken) Storage.set('token', testToken);
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+// 实例化vue
+vueRender()
+

@@ -15,6 +15,7 @@ import {
   Form,
   FormItem,
   Input,
+  InputNumber,
   ColorPicker,
   Option,
   Select,
@@ -46,6 +47,7 @@ Vue.prototype.$loading = Loading.service;
 Vue.use(Loading.directive);
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(InputNumber);
 Vue.use(Tag);
 Vue.use(Cascader);
 Vue.use(Checkbox);

@@ -1,14 +1,9 @@
-import request from "./_request";
+import http from "./__http__"
 
-// 1获取菜单数据接口
-function getMenuDataApi(data) {
-  return request({
-    url: "/Api/GetMenusByUserId",
-    method: 'post',
-    data
-  });
-}
+const getMenuApi = () => http.get({
+  url: '/Api/GetMenusByUserId',
+})
 
 export {
-  getMenuDataApi, // 1获取菜单数据接口
+  getMenuApi, // 1获取菜单数据接口
 }

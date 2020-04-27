@@ -1,13 +1,10 @@
-import request from "./_request";
+import http from "./__http__"
 
 // 登录接口
-function loginApi(data) {
-  return request({
-    url: "/Api/Login",
-    method: 'post',
-    data
-  });
-}
+const loginApi = (data) => http.post({
+  url: "/Api/Login",
+  data
+})
 
 export {
   loginApi, // 登录接口
