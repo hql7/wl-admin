@@ -19,8 +19,7 @@
             v-model="num"
             @change="handleShelfLifeChange"
             :min="0"
-            :max="10"
-            label="描述文字"
+            label="请输入天数"
           ></el-input-number>
         </el-form-item>
         <el-form-item label="结束时间：">
