@@ -1,10 +1,10 @@
 import { render } from "wl-vue"
-import App from "./App.vue";
-import store from "./store";
-import router from "./router";
-import nextRoutes from "./router/next-router"
-import routeMap from "./router/map-router"
-import { getMenuApi } from "./api/menu"
+import App from "../App.vue";
+import store from "../store";
+import router from "../router";
+import nextRoutes from "../router/next-router"
+import routeMap from "../router/map-router"
+import { getMenuApi } from "../api/menu"
 
 // 声明鉴权需要的参数
 const routeOptions = {
