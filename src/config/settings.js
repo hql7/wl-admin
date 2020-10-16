@@ -9,6 +9,6 @@ const settings = {
     isCollapse: false, // 是否折叠
     uniqueOpened: true // 是否手风琴模式，展开一个自动关闭其他菜单
   }
-}
+};
 
-export default settings
+export default settings;

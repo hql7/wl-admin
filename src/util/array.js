@@ -6,7 +6,7 @@
 
 /**
  * 从树形数据中递归筛选目标值
- * arr 数据源 
+ * arr 数据源
  * val 目标值
  * id 需要判断相等的字段
  * childs 子集
@@ -89,7 +89,11 @@ function arrayToTree(
     let children_array = array.filter(
       it => it[options.pid] === item[options.id]
     );
-    if (item[options.children] && item[options.children] instanceof Array && item[options.children].length > 0) {
+    if (
+      item[options.children] &&
+      item[options.children] instanceof Array &&
+      item[options.children].length > 0
+    ) {
       // 去重合并数组
       item[options.children].map(i => (unique[i[options.id]] = 1));
       item[options.children].push(
@@ -145,7 +149,8 @@ function patchTreeChain(
     _all_lack_data = []; // 声明一个全部需要补全的节点盒子
   data.forEach(i => {
     // 当一个节点在整个已选节点里找不到父节点时，并且此节点不是根节点时，从源数据中补全
-    if (!data.find(t => t[options.Id] === i[options.ParentId]) &&
+    if (
+      !data.find(t => t[options.Id] === i[options.ParentId]) &&
       i[options.ParentId] !== options.root
     ) {
       // 首先将记录在节点身上的父级树链拆分
@@ -178,47 +183,55 @@ function patchTreeChain(
  */
 function locationAfterDelete(data, delId, actId, useTree = false) {
   if (data.length === 1) {
-    let _item = data.Parent ? data.Parent : { Id: useTree ? data[0].ParentId : '' }
-    return { item: _item, after_data: [] }
+    let _item = data.Parent
+      ? data.Parent
+      : { Id: useTree ? data[0].ParentId : "" };
+    return { item: _item, after_data: [] };
   }
   let after_data = data.filter(item => item.Id !== delId);
   if (actId && delId !== actId) {
-    return { item: null, after_data }
+    return { item: null, after_data };
   }
   let cur_i = data.findIndex(item => item.Id === delId);
   let prv_item = cur_i > 0 ? data[cur_i - 1] : null;
-  let next_item = cur_i !== data.length - 1 ? data[cur_i + 1] : null
-  return { item: next_item || prv_item, after_data }
+  let next_item = cur_i !== data.length - 1 ? data[cur_i + 1] : null;
+  return { item: next_item || prv_item, after_data };
 }
 
 /**
  * 从坐标值拼接指定字段到祖先元素
  * @param {*} data 一维数据源
- * @param {*} coordinate 坐标值数据 
+ * @param {*} coordinate 坐标值数据
  * @param {*} options 配置项
  */
-function splicParentsUntil(data, coordinate, options = {
-  Splic: 'Name', // 所要拼接字段
-  Connector: '\\', // 连接符 
-  Id: "Id", // 数据源匹配字段
-  CoordinateId: 'id',
-  ParentId: "ParentId",
-  Parents: "Parents",
-  IdentityId: "IdentityId",
-  root: "00000000-0000-0000-0000-000000000000"
-}) {
-  let coordinate_item = data.find(i => i[options.Id] === coordinate[options.CoordinateId]);
-  if (!coordinate_item) return '';
+function splicParentsUntil(
+  data,
+  coordinate,
+  options = {
+    Splic: "Name", // 所要拼接字段
+    Connector: "\\", // 连接符
+    Id: "Id", // 数据源匹配字段
+    CoordinateId: "id",
+    ParentId: "ParentId",
+    Parents: "Parents",
+    IdentityId: "IdentityId",
+    root: "00000000-0000-0000-0000-000000000000"
+  }
+) {
+  let coordinate_item = data.find(
+    i => i[options.Id] === coordinate[options.CoordinateId]
+  );
+  if (!coordinate_item) return "";
   if (!coordinate_item[options.Parents]) return coordinate_item[options.Splic];
   let _parents = coordinate_item[options.Parents]
     .substring(1, coordinate_item[options.Parents].length - 1)
     .split(",")
     .filter(i => !!i);
-  let splic_parents = '';
+  let splic_parents = "";
   _parents.forEach(i => {
     let _parent = data.find(t => t[options.IdentityId] == i);
-    splic_parents += `${_parent[options.Splic]}${options.Connector}`
-  })
+    splic_parents += `${_parent[options.Splic]}${options.Connector}`;
+  });
   return splic_parents + coordinate_item[options.Splic];
 }
 

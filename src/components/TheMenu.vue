@@ -1,11 +1,9 @@
 <template>
   <div class="the-menu-box">
     <transition name="fade-width" mode="out-in">
-      <div
-        class="the-menu-logo"
-        @click="gotoIndex()"
-        :key="is_collapse"
-      >{{is_collapse?'WL':'wl-admin'}}</div>
+      <div class="the-menu-logo" @click="gotoIndex()" :key="is_collapse">
+        {{ is_collapse ? "WL" : "wl-admin" }}
+      </div>
     </transition>
     <div class="the-menu-scroll" ref="the-menu-scroll">
       <el-menu
@@ -20,7 +18,7 @@
         <el-submenu v-for="sub of menu_data" :key="sub.id" :index="sub.id">
           <template slot="title">
             <i class="menu-icon" :class="sub.icon"></i>
-            <span class="menu-sub-title">{{sub.title}}</span>
+            <span class="menu-sub-title">{{ sub.title }}</span>
           </template>
           <el-menu-item
             v-for="item of sub.children"
@@ -28,7 +26,7 @@
             :index="item.url"
             @click="goto(item)"
           >
-            <span class="menu-item-title">{{item.title}}</span>
+            <span class="menu-item-title">{{ item.title }}</span>
           </el-menu-item>
         </el-submenu>
       </el-menu>

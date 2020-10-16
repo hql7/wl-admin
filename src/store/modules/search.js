@@ -5,8 +5,8 @@ export default {
     active: false,
     // 快捷键
     hotkey: {
-      open: 's',
-      close: 'esc'
+      open: "s",
+      close: "esc"
     },
     // 所有可以搜索的页面
     pages: []
@@ -14,7 +14,7 @@ export default {
   mutations: {
     // 切换激活状态
     TOGGLE_ACTIVE_STATUS(state) {
-      state.active = !state.active
+      state.active = !state.active;
     },
     // 设置激活状态
     SET_ACTIVE_STATUS(state, data) {
@@ -33,15 +33,15 @@ export default {
   actions: {
     // 切换激活状态
     toggleActiveStatus({ commit }) {
-      commit('TOGGLE_ACTIVE_STATUS');
+      commit("TOGGLE_ACTIVE_STATUS");
     },
     // 设置激活状态
     setActiveStatus({ commit }, data) {
-      commit('SET_ACTIVE_STATUS', data)
+      commit("SET_ACTIVE_STATUS", data);
     },
     // 设置快捷键
     setHotKey({ commit }, open, close) {
-      commit('SET_HOT_KEY', open, close)
-    },
+      commit("SET_HOT_KEY", open, close);
+    }
   }
-}
+};

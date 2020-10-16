@@ -23,7 +23,8 @@
         rel="nofollow"
         href="http://www.beian.miit.gov.cn/"
         target="_blank"
-      >豫ICP备20007340号</a>
+        >豫ICP备20007340号</a
+      >
     </footer>
   </div>
 </template>

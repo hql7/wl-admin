@@ -17,7 +17,7 @@
     >
       <!-- 操作文件夹滑入区 -->
       <wl-fadein :show="fade.folder">
-        <span slot="header">{{folder_form.Id?'编辑':'新增'}}文件夹</span>
+        <span slot="header">{{ folder_form.Id ? "编辑" : "新增" }}文件夹</span>
         <el-form
           ref="folder_form"
           label-position="top"
@@ -38,7 +38,10 @@
             ></wlTreeSelect>
           </el-form-item>
           <el-form-item label="文件夹名称 " prop="Name">
-            <el-input v-model="folder_form.Name" placeholder="请输入文件夹名称"></el-input>
+            <el-input
+              v-model="folder_form.Name"
+              placeholder="请输入文件夹名称"
+            ></el-input>
           </el-form-item>
           <el-form-item label="备注说明" prop="Describe">
             <el-input
@@ -50,7 +53,10 @@
           </el-form-item>
         </el-form>
         <div slot="footer">
-          <submit-btn @btn="submitFolderFrom('folder_form')" :status="load.folder"></submit-btn>
+          <submit-btn
+            @btn="submitFolderFrom('folder_form')"
+            :status="load.folder"
+          ></submit-btn>
           <el-button @click="fade.folder = false">取消</el-button>
         </div>
       </wl-fadein>
@@ -350,5 +356,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

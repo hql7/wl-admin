@@ -180,7 +180,7 @@ export default {
 </script>
 
 <style lang="scss">
-.wl-header{
+.wl-header {
   padding: 20px 0;
   font-weight: 600;
   font-size: 16px;

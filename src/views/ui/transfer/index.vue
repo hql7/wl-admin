@@ -2,7 +2,9 @@
   <wl-container>
     <h4 class="hello" slot="header">
       <label>请打开f12查看移动数据</label>
-      <el-button class="margin-left" type="success" plain @click="changeMode">当前模式：{{ mode }}</el-button>
+      <el-button class="margin-left" type="success" plain @click="changeMode"
+        >当前模式：{{ mode }}</el-button
+      >
       <el-button @click="clearChecked()">清除选中</el-button>
     </h4>
     <div class="transfet-box">
@@ -18,7 +20,7 @@
         :filterNode="filterNode"
         :defaultProps="defaultProps"
         :defaultCheckedKeys="defaultCheckedKeys"
-        :defaultExpandedKeys="[2,3]"
+        :defaultExpandedKeys="[2, 3]"
         @right-check-change="rightCheckChange"
         @left-check-change="leftCheckChange"
         @removeBtn="remove"
@@ -26,7 +28,12 @@
         height="540px"
         node_key="id"
       >
-        <span slot="title-right" class="my-title-right" @click="handleTitleRight">自定义内容</span>
+        <span
+          slot="title-right"
+          class="my-title-right"
+          @click="handleTitleRight"
+          >自定义内容</span
+        >
       </wl-tree-transfer>
     </div>
   </wl-container>

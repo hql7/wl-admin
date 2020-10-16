@@ -1,8 +1,8 @@
 <template>
   <div class="wl-dynamic-table">
     <!-- 按钮区 -->
-    <el-row class="check-list" v-if="useCheckList||useExport">
-      <el-col :span="useExport?21:24" v-if="useCheckList">
+    <el-row class="check-list" v-if="useCheckList || useExport">
+      <el-col :span="useExport ? 21 : 24" v-if="useCheckList">
         <el-checkbox-group v-model="checkList">
           <el-checkbox
             v-for="item of selfCheckList"
@@ -10,7 +10,8 @@
             :label="item[selfProps.prop]"
             :checked="item[selfProps.checked]"
             :disabled="item[selfProps.disabled]"
-          >{{item[selfProps.label]}}</el-checkbox>
+            >{{ item[selfProps.label] }}</el-checkbox
+          >
         </el-checkbox-group>
       </el-col>
       <el-col :span="3" class="align-right" v-if="useExport">
@@ -20,7 +21,8 @@
           type="primary"
           icon="el-icon-ali-export iconfont"
           @click="exportClick"
-        >导出</el-button>
+          >导出</el-button
+        >
       </el-col>
     </el-row>
     <!-- 列表区 -->

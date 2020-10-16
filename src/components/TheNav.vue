@@ -4,22 +4,34 @@
     <div class="nav-handle-collapse">
       <i
         class="nav-icon"
-        :class="isCollapse?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"
+        :class="isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left'"
         @click="setMenuCollapseStatus()"
       ></i>
     </div>
     <div class="nav-main">wl-ui: 精美易用的复杂前端组件解决方案</div>
     <!-- 右侧操作区 -->
     <div class="nav-handle-box">
-      <i class="iconfont icon-github-outline nav-icon nav-handle-item" @click="goToGithub()"></i>
+      <i
+        class="iconfont icon-github-outline nav-icon nav-handle-item"
+        @click="goToGithub()"
+      ></i>
       <!-- 消息按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-bell" @click="notYetOpened()"></i>
+      <i
+        class="nav-icon nav-handle-item el-icon-bell"
+        @click="notYetOpened()"
+      ></i>
       <!-- 全屏按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-rank" @click="handleFullScreen()"></i>
+      <i
+        class="nav-icon nav-handle-item el-icon-rank"
+        @click="handleFullScreen()"
+      ></i>
       <!-- 用户名 -->
-      <span class="nav-handle-item nav-user-name">{{user_name}}</span>
+      <span class="nav-handle-item nav-user-name">{{ user_name }}</span>
       <!-- 退出登录按钮 -->
-      <i class="nav-icon nav-handle-item el-icon-switch-button" @click="logout()"></i>
+      <i
+        class="nav-icon nav-handle-item el-icon-switch-button"
+        @click="logout()"
+      ></i>
     </div>
   </div>
 </template>

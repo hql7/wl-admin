@@ -10,9 +10,7 @@
       <the-nav />
       <!-- 页面搜索组件 -->
       <transition name="fade-scale">
-        <div v-if="searchActive" class="layout-search">
-          
-        </div>
+        <div v-if="searchActive" class="layout-search"></div>
       </transition>
       <!-- 右侧内容区 -->
       <transition name="fade-scale">
@@ -25,11 +23,11 @@
           <div class="view-body">
             <transition name="fade-transverse">
               <keep-alive :include="keepAlive">
-                <router-view/>
+                <router-view />
               </keep-alive>
             </transition>
           </div>
-        </div>  
+        </div>
       </transition>
     </div>
   </div>
@@ -53,7 +51,7 @@ export default {
     content: String
   },
   computed: {
-    ...mapGetters({searchActive: "active", keepAlive: "keep_alive"})
+    ...mapGetters({ searchActive: "active", keepAlive: "keep_alive" })
   }
 };
 </script>
@@ -79,7 +77,7 @@ body {
   background-position: 50%;
   overflow: hidden;
 
-  >.layout-mask{
+  > .layout-mask {
     position: absolute;
     top: 0;
     right: 0;
@@ -108,7 +106,7 @@ body {
       box-sizing: border-box;
     }
 
-    >.view-body{
+    > .view-body {
       position: relative;
       flex-grow: 1;
       flex-shrink: 1;

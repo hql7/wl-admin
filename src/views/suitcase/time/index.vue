@@ -36,7 +36,7 @@
         </el-form-item>
         <el-form-item>
           计算结果是：
-          <span class="result">{{result}}</span>
+          <span class="result">{{ result }}</span>
         </el-form-item>
       </el-form>
     </div>

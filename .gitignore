@@ -8,7 +8,8 @@ node_modules
 dist/
 # Other files and folders
 .settings/
-
+dist_electron
+/dist_electron
 # Executables
 *.swf
 *.air
@@ -18,3 +19,6 @@ dist/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+
+#Electron-builder output
+/dist_electron

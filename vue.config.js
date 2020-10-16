@@ -1,6 +1,5 @@
-
 // const port = 6668; // dev port
-let styleVariables = require('./src/style/variables.scss.js');
+let styleVariables = require("./src/style/variables.scss.js");
 
 module.exports = {
   /* crossorigin: 'anonymous', // htmlWebpackPlugin
@@ -13,12 +12,13 @@ module.exports = {
       errors: true
     },
   }, */
+  productionSourceMap: false,
   css: {
     loaderOptions: {
       sass: {
         prependData: Object.keys(styleVariables)
-          .map(k => `\$${k.replace('_', '-')}: ${styleVariables[k]};`)
-          .join('\n')
+          .map(k => `\$${k.replace("_", "-")}: ${styleVariables[k]};`)
+          .join("\n")
       }
     }
   }

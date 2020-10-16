@@ -1,8 +1,17 @@
 <template>
   <div class="video-player-box">
-    <h3 class="video-player-h3"><i class="el-icon-circle-close video-player-icon" @click="videoClose"></i></h3>
+    <h3 class="video-player-h3">
+      <i class="el-icon-circle-close video-player-icon" @click="videoClose"></i>
+    </h3>
     <!-- <div class="player"> -->
-    <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions" @play="onPlayerPlay($event)" @pause="onPlayerPause($event)">
+    <video-player
+      class="video-player vjs-custom-skin"
+      ref="videoPlayer"
+      :playsinline="true"
+      :options="playerOptions"
+      @play="onPlayerPlay($event)"
+      @pause="onPlayerPause($event)"
+    >
     </video-player>
     <!-- </div> -->
   </div>

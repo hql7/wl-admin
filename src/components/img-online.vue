@@ -1,7 +1,7 @@
 <template>
   <div class="img-pre-box" @click="imgClose('close')">
     <!-- <pic-zoom :url="imgUrl"></pic-zoom> -->
-    <img class="u-img-pre" :src="imgUrl" alt="图片资料">
+    <img class="u-img-pre" :src="imgUrl" alt="图片资料" />
   </div>
 </template>
 
@@ -58,5 +58,3 @@ export default {
   }
 }
 </style>
-
-

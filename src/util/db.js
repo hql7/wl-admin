@@ -1,5 +1,5 @@
 import low from "lowdb";
-import LocalStorage from "lowdb/adapters/LocalStorage"
+import LocalStorage from "lowdb/adapters/LocalStorage";
 // import FileSync from "lowdb/adapters/FileAsync"
 
 /**
@@ -15,10 +15,14 @@ class Wldb {
    * @param {*} options 当提供了name参数时，你能设置选项
    * @param {*} defaults 声明db数据库内默认的key
    */
-  constructor(/* type = 'local', */ name = 'wldb', options = {}, defaults = {}) {
+  constructor(
+    /* type = 'local', */ name = "wldb",
+    options = {},
+    defaults = {}
+  ) {
     // let adapter = type == 'local' ? new LocalStorage(name, options) : new FileSync(`${name}.json`, options);
     let adapter = new LocalStorage(name, options);
-    this.db = low(adapter)
+    this.db = low(adapter);
     this.db.defaults(defaults).write();
   }
 
@@ -30,7 +34,10 @@ class Wldb {
    * @param {*} val 要推入集合的value
    */
   push(collection, val) {
-    this.db.get(collection).push(val).write()
+    this.db
+      .get(collection)
+      .push(val)
+      .write();
   }
   /**
    * 遍历 collection（集合）元素，返回 predicate（断言函数）第一个返回真值的第一个元素
@@ -38,7 +45,10 @@ class Wldb {
    * @param {*} predicate 断言条件
    */
   find(collection, predicate) {
-    return this.db.get(collection).find(predicate).value()
+    return this.db
+      .get(collection)
+      .find(predicate)
+      .value();
   }
   /**
    * 移除数组中predicate（断言）返回为真值的所有元素，并返回移除元素组成的数组
@@ -46,7 +56,10 @@ class Wldb {
    * @param {*} predicate 断言条件
    */
   remove(collection, predicate) {
-    this.db.get(collection).remove(predicate).write()
+    this.db
+      .get(collection)
+      .remove(predicate)
+      .write();
   }
 
   //---------------------------------------以下为对象操作方法-----------------------------------------
@@ -57,7 +70,7 @@ class Wldb {
    * @param {*} value 值
    */
   set(path, value) {
-    this.db.set(path, value).write()
+    this.db.set(path, value).write();
   }
 
   //---------------------------------------以下为字符串操作方法-----------------------------------------
@@ -68,9 +81,9 @@ class Wldb {
    * @param {*} value 值是一个带返回值的函数
    */
   update(key, value) {
-    this.db.update(key, value).write()
+    this.db.update(key, value).write();
   }
 }
 
-const wldb = new Wldb('wldb', {}, { posts: [], user: {}, color: "" });
+const wldb = new Wldb("wldb", {}, { posts: [], user: {}, color: "" });
 export default wldb;

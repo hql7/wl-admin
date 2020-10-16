@@ -1,6 +1,6 @@
 import FtFadein from "./index.vue";
 
-FtFadein.install = function (Vue) {
+FtFadein.install = function(Vue) {
   Vue.component(FtFadein.name, FtFadein);
 };
 

@@ -1,19 +1,30 @@
 <template>
   <section>
-
     <el-row type="flex">
       <el-popover placement="bottom" trigger="hover">
         <span slot="reference" class="filename">
-          <span v-if="fileLength>0">{{files[fileLength-1]['filename']}}</span>
+          <span v-if="fileLength > 0">{{
+            files[fileLength - 1]["filename"]
+          }}</span>
         </span>
-        <el-row v-for="(file,index) in  files" :key="file.id" type="flex">
-          <el-col style="height: 30px;">{{file.filename}}</el-col>
+        <el-row v-for="(file, index) in files" :key="file.id" type="flex">
+          <el-col style="height: 30px;">{{ file.filename }}</el-col>
           <i class="el-icon-close" @click="removeClick(file, index)"></i>
         </el-row>
       </el-popover>
       <el-col>
-        <input type="file" @change="uploads" ref="upload" style="display: none;" multiple />
-        <slot name="button" v-if="$slots.button" @click.prevent="uploadFile"></slot>
+        <input
+          type="file"
+          @change="uploads"
+          ref="upload"
+          style="display: none;"
+          multiple
+        />
+        <slot
+          name="button"
+          v-if="$slots.button"
+          @click.prevent="uploadFile"
+        ></slot>
         <el-button
           v-else
           type="text"
@@ -21,13 +32,15 @@
           @click.prevent="uploadFile"
           class="btn"
           :disabled="disabled || readonly"
-        >上传附件</el-button>
+          >上传附件</el-button
+        >
         <el-button
-          v-if="fileLength>0"
+          v-if="fileLength > 0"
           type="text"
           @click="checkClick"
           :disabled="disabled"
-        >查看({{fileLength}})</el-button>
+          >查看({{ fileLength }})</el-button
+        >
       </el-col>
     </el-row>
 
@@ -35,7 +48,9 @@
       <ft-table :data="files" :columns="columns" height="50vh">
         <template slot-scope="scope" slot="operation">
           <el-button type="text" @click="checkFile(scope.row)">查看</el-button>
-          <el-button type="text" @click="downloadFile(scope.row)">下载</el-button>
+          <el-button type="text" @click="downloadFile(scope.row)"
+            >下载</el-button
+          >
         </template>
       </ft-table>
       <el-dialog :visible.sync="maskVisible" append-to-body align="center">
@@ -192,15 +207,14 @@ export default {
         });
     },
     removeClick(file, index) {
-      if(this.disabled) return;
-      this.$confirm(`即将删除${file.filename}文件, 是否继续?`, '删除', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-      }).then(()=>{
-        this.removeFile( this.removeUrl + file.id , index);
-      })
-
+      if (this.disabled) return;
+      this.$confirm(`即将删除${file.filename}文件, 是否继续?`, "删除", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(() => {
+        this.removeFile(this.removeUrl + file.id, index);
+      });
     },
     removeFile(url, index) {
       axios({ url })

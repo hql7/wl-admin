@@ -1,5 +1,11 @@
 <template>
-  <el-button :size="size" :type="type" :plain="plain" v-if="status" icon="el-icon-loading"></el-button>
+  <el-button
+    :size="size"
+    :type="type"
+    :plain="plain"
+    v-if="status"
+    icon="el-icon-loading"
+  ></el-button>
   <el-button :size="size" :type="type" :plain="plain" v-else @click="submit()">
     <slot>保存</slot>
   </el-button>

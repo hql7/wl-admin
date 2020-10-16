@@ -1,6 +1,6 @@
 import FtContainer from "./index.vue";
 
-FtContainer.install = function (Vue) {
+FtContainer.install = function(Vue) {
   Vue.component(FtContainer.name, FtContainer);
 };
 

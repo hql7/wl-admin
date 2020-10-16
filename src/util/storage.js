@@ -20,7 +20,7 @@ function sessionSet(key, value) {
 function sessionGet(key) {
   let _data = sessionStorage.getItem(key);
   try {
-    return JSON.parse(_data)
+    return JSON.parse(_data);
   } catch (e) {
     return _data;
   }
@@ -31,7 +31,7 @@ function sessionGet(key) {
  * @param {*} key 键名
  */
 function sessionDel(key) {
-  sessionStorage.removeItem(key)
+  sessionStorage.removeItem(key);
 }
 
 /**
@@ -57,7 +57,7 @@ function localSet(key, value) {
 function localGet(key) {
   let _data = localStorage.getItem(key);
   try {
-    return JSON.parse(_data)
+    return JSON.parse(_data);
   } catch (e) {
     return _data;
   }
@@ -68,7 +68,7 @@ function localGet(key) {
  * @param {*} key 键名
  */
 function localDel(key) {
-  localStorage.removeItem(key)
+  localStorage.removeItem(key);
 }
 
 export {
@@ -79,4 +79,4 @@ export {
   localSet,
   localGet,
   localDel
-}
+};

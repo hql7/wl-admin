@@ -89,15 +89,15 @@ Vue.use(DatePicker);
  * @param {*} options 消息 | 配置项
  */
 function wlMessage(options) {
-  Object.prototype.toString.call(options) === '[object Object]'
+  Object.prototype.toString.call(options) === "[object Object]"
     ? Message({
-      showClose: true,
-      ...options
-    })
+        showClose: true,
+        ...options
+      })
     : Message({
-      showClose: true,
-      message: options
-    })
+        showClose: true,
+        message: options
+      });
 }
 
 /**
@@ -108,14 +108,14 @@ function wlMessage(options) {
  */
 function wlConfirm(message, title = "提示", options = {}) {
   let _options = {
-    confirmButtonText: '确定',
-    cancelButtonText: '取消',
-    type: 'warning',
+    confirmButtonText: "确定",
+    cancelButtonText: "取消",
+    type: "warning",
     ...options
-  }
-  return MessageBox.confirm(message, title, _options)
+  };
+  return MessageBox.confirm(message, title, _options);
 }
 
-Vue.prototype.$ELEMENT = { size: 'small' };
+Vue.prototype.$ELEMENT = { size: "small" };
 Vue.prototype.$message = wlMessage;
 Vue.prototype.$confirm = wlConfirm;

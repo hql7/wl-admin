@@ -16,7 +16,12 @@
               <label class="item-label">
                 <i class="iconfont icon-yonghu1"></i>
               </label>
-              <input class="item-ipt" type="text" v-model="login_form.act" placeholder="请输入账号" />
+              <input
+                class="item-ipt"
+                type="text"
+                v-model="login_form.act"
+                placeholder="请输入账号"
+              />
             </div>
           </el-form-item>
           <el-form-item prop="pass">
@@ -24,7 +29,12 @@
               <label class="item-label">
                 <i class="iconfont icon-password1"></i>
               </label>
-              <input class="item-ipt" type="password" v-model="login_form.pass" placeholder="请输入密码" />
+              <input
+                class="item-ipt"
+                type="password"
+                v-model="login_form.pass"
+                placeholder="请输入密码"
+              />
             </div>
           </el-form-item>
           <el-form-item prop="code">
@@ -49,7 +59,8 @@
               size="large"
               @click="submitLogin('login-form')"
               class="login-btn"
-            >登录</el-button>
+              >登录</el-button
+            >
           </el-form-item>
         </el-form>
       </div>

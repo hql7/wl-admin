@@ -20,7 +20,7 @@
         :on-error="handleError"
         :on-exceed="handleExceed"
         :on-success="handleSuccess"
-        >
+      >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">
           将文件拖到此处，或
@@ -63,7 +63,7 @@
 export default {
   data() {
     return {
-      fileList: [], // 已上传文件
+      fileList: [] // 已上传文件
     };
   },
   props: {
@@ -89,7 +89,7 @@ export default {
     // 自定义校验函数
     regFuc: Function,
     // 上传个数限制
-    limit: Number,
+    limit: Number
   },
   methods: {
     // 手动上传
@@ -98,14 +98,14 @@ export default {
     },
     // 上传前验证
     beforeUpload(file) {
-      this.$emit('beforeUpload', file);
+      this.$emit("beforeUpload", file);
       // 不校验
       if (!this.reg) return true;
       // 自定义校验
       if (this.regFuc) return this.regFuc(file);
     },
     // 上传成功回调
-    handleSuccess(res, file,fileList) {
+    handleSuccess(res, file, fileList) {
       this.$emit("uploadSuccess", res, file, fileList);
     },
     // 上传失败回调
@@ -115,14 +115,14 @@ export default {
     // 文件超出限制
     handleExceed() {
       this.$message.error("超出文件上传个数限制，最大上传个数为：1！");
-    },
+    }
   },
   computed: {
     // 上传参数
     upOptions() {
       return this.options;
     }
-  },
+  }
 };
 </script>
 

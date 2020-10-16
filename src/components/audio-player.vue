@@ -1,6 +1,11 @@
 <template>
   <div class="audio-player-box">
-    <h3 class="audio-player-h3"><i class="el-icon-circle-close audio-player-icon" @click="audioClose('close')"></i></h3>
+    <h3 class="audio-player-h3">
+      <i
+        class="el-icon-circle-close audio-player-icon"
+        @click="audioClose('close')"
+      ></i>
+    </h3>
     <audio class="u-audio" :src="audioUrl" autoplay controls>
       您的浏览器版本过低，暂不支持音频播放，请升级或更换浏览器。
     </audio>

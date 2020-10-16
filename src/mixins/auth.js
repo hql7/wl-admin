@@ -9,8 +9,8 @@
 const permissionCheck = {
   data() {
     return {
-      _owner: [], // 当前路由权限码数组
-    }
+      _owner: [] // 当前路由权限码数组
+    };
   },
   created() {
     let _purview_array = this.$route.meta.purview || [];
@@ -25,6 +25,6 @@ const permissionCheck = {
       return this._owner.some(item => item === auth);
     }
   }
-}
+};
 
 export default permissionCheck;

@@ -4,7 +4,7 @@ import { Message } from "element-ui";
  * 防抖函数
  * @param {*} func 防抖后要执行的回调
  * @param {*} wait 等待时间
- * @param {*} immediate 
+ * @param {*} immediate
  */
 function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result;
@@ -53,25 +53,31 @@ function debounce(func, wait, immediate) {
  * @param {*} coordinate 坐标值数据
  * @param {*} options 配置项
  */
-function splicParentsUntil(data, coordinate, options = {
-  Splic: 'Name', // 所要拼接字段
-  Connector: '\\', // 连接符 
-  Id: "Id", // 数据源匹配字段 
-  Parents: "Parents",
-  IdentityId: "IdentityId",
-}) {
-  let coordinate_item = data.find(i => i[options.Id] === coordinate[options.Id]);
-  if (!coordinate_item) return '';
+function splicParentsUntil(
+  data,
+  coordinate,
+  options = {
+    Splic: "Name", // 所要拼接字段
+    Connector: "\\", // 连接符
+    Id: "Id", // 数据源匹配字段
+    Parents: "Parents",
+    IdentityId: "IdentityId"
+  }
+) {
+  let coordinate_item = data.find(
+    i => i[options.Id] === coordinate[options.Id]
+  );
+  if (!coordinate_item) return "";
   if (!coordinate_item[options.Parents]) return coordinate_item[options.Splic];
   let _parents = coordinate_item[options.Parents]
     .substring(1, coordinate_item[options.Parents].length - 1)
     .split(",")
     .filter(i => !!i);
-  let splic_parents = '';
+  let splic_parents = "";
   _parents.forEach(i => {
     let _parent = data.find(t => t[options.IdentityId] == i);
-    splic_parents += `${_parent[options.Splic]}${options.Connector}`
-  })
+    splic_parents += `${_parent[options.Splic]}${options.Connector}`;
+  });
   return splic_parents + coordinate_item[options.Splic];
 }
 
@@ -83,7 +89,7 @@ function download(res) {
   // 错误处理
   if (res.data.type == "application/json") {
     let reader = new FileReader();
-    reader.readAsText(res.data, 'utf-8');
+    reader.readAsText(res.data, "utf-8");
     reader.onload = function() {
       let json_data = JSON.parse(reader.result);
       Message({
@@ -91,18 +97,19 @@ function download(res) {
         message: json_data.Message,
         type: "error"
       });
-    }
+    };
     return;
   }
   // 下载处理
-  let filename = "content-disposition" in res.headers ?
-    decodeURIComponent(
-      res.headers["content-disposition"]
-      .split(";")[1]
-      .split("=")[1]
-      .replace(/"/g, "")
-    ) :
-    "下载文件";
+  let filename =
+    "content-disposition" in res.headers
+      ? decodeURIComponent(
+          res.headers["content-disposition"]
+            .split(";")[1]
+            .split("=")[1]
+            .replace(/"/g, "")
+        )
+      : "下载文件";
   try {
     if (window.navigator.msSaveOrOpenBlob) {
       navigator.msSaveBlob(res.data, filename);
@@ -142,5 +149,5 @@ export {
   debounce, // 防抖函数
   splicParentsUntil, // 从坐标值拼接指定字段到祖先元素
   download, // download
-  closeOtherLayout, // 关闭其他弹出类视图函数
-}
+  closeOtherLayout // 关闭其他弹出类视图函数
+};
