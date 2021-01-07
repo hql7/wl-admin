@@ -14,7 +14,7 @@
   },
   "main": "background.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "better-scroll": "^1.15.2",
     "core-js": "^3.4.4",
     "el-tree-transfer": "^2.4.7",
