@@ -17,6 +17,7 @@
     "axios": "^0.19.2",
     "better-scroll": "^1.15.2",
     "core-js": "^3.4.4",
+    "el-tree-transfer": "^2.4.7",
     "element-ui": "^2.4.5",
     "lowdb": "^1.0.0",
     "moment": "^2.24.0",
@@ -30,7 +31,6 @@
     "wl-explorer": "^0.1.7",
     "wl-gantt": "^1.0.1",
     "wl-http": "^1.1.1",
-    "wl-tree-transfer": "^1.0.8",
     "wl-vue": "^1.2.1",
     "wl-vue-select": "^0.5.1"
   },

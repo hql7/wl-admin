@@ -3832,6 +3832,14 @@ ejs@^3.1.5:
   dependencies:
     jake "^10.6.1"
 
+el-tree-transfer@^2.4.7:
+  version "2.4.7"
+  resolved "https://registry.yarnpkg.com/el-tree-transfer/-/el-tree-transfer-2.4.7.tgz#d0050dc0cbf21dc8a5601a07a0e9ea3c21df7cca"
+  integrity sha512-wcjQyqzmiJMDhF3qHR1NcqXp27Q65Td1EsMOVkqqOo9Z2mkVC+cGJEu3V4L90x8c1XgEciQL7tMuSjCP7/8G4g==
+  dependencies:
+    lodash "^4.17.20"
+    wl-core "^1.1.4"
+
 electron-builder@^22.2.0:
   version "22.9.1"
   resolved "https://registry.yarnpkg.com/electron-builder/-/electron-builder-22.9.1.tgz#a2962db6f2757bc01d02489f38fafe0809f68f60"
@@ -6288,7 +6296,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.3, lodash@^4.2.0, lodash@~4.17.10:
+lodash@4, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.3, lodash@^4.2.0, lodash@~4.17.10:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -10534,15 +10542,6 @@ wl-http@^1.1.1:
     axios "^0.18.0"
     mockjs "^1.1.0"
     wl-core "^1.0.0"
-
-wl-tree-transfer@^1.0.8:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/wl-tree-transfer/-/wl-tree-transfer-1.0.9.tgz#b2f483ddf863a1c77087e57af20cadb3b3400619"
-  integrity sha512-KluqAQdrYRjWLu/JIEAOPu0QSwWhnhr0SzgrF4Oms27LVgpRqmDdfDW3Q4rylR0sqXwIyWDDZibNBVhlTOFF9g==
-  dependencies:
-    core-js "^2.6.5"
-    element-ui "^2.4.5"
-    vue "^2.6.10"
 
 wl-vue-select@^0.2.7:
   version "0.2.9"
