@@ -145,9 +145,21 @@ function closeOtherLayout(data = {}, key) {
   if (key) data[key] = true;
 }
 
+/**
+ * @name 生成uuid
+ */
+const createUuid = () => {
+  let temp_url = URL.createObjectURL(new Blob());
+  let str_url = temp_url.toString();
+  URL.revokeObjectURL(temp_url);
+  let uuid = str_url.substr(str_url.lastIndexOf("/") + 1);
+  return uuid.replace(/-/g, '');
+}
+
 export {
   debounce, // 防抖函数
   splicParentsUntil, // 从坐标值拼接指定字段到祖先元素
   download, // download
-  closeOtherLayout // 关闭其他弹出类视图函数
+  closeOtherLayout, // 关闭其他弹出类视图函数
+  createUuid,
 };

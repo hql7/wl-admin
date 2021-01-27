@@ -10,9 +10,12 @@ import WlBimViewer from "wl-bim-viewer";
 import "wl-bim-viewer/lib/wl-bim-viewer.css";
 import WlAddress from "wl-address";
 import "wl-address/lib/wl-address.css";
+import WlTodoList from "wl-todo-list"
+import "wl-todo-list/lib/wl-todo-list.css"
 
 Vue.use(WlAddress);
 Vue.use(WlBimViewer);
 Vue.use(WlSelect);
 Vue.use(WlExplorer);
 Vue.use(WlGantt);
+Vue.use(WlTodoList);

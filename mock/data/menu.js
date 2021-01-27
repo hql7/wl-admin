@@ -15,11 +15,7 @@ const menus = [
         title: "文件管理器",
         url: "/ui/explorer"
       },
-      {
-        id: "3-8",
-        title: "工作流流程图",
-        url: "/ui/workflow"
-      },
+
       {
         id: "3-3",
         title: "BIM三维模型",
@@ -34,6 +30,16 @@ const menus = [
         id: "3-6",
         title: "树形下拉框",
         url: "/ui/select"
+      },
+      {
+        id: "3-9",
+        title: "任务看板",
+        url: "/ui/todo"
+      },
+      {
+        id: "3-8",
+        title: "工作流流程图",
+        url: "/ui/workflow"
       },
       {
         id: "3-5",

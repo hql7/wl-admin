@@ -50,7 +50,6 @@
 </template>
 
 <script>
-
 import treeTransfer from "el-tree-transfer"; // next打包后代码位置
 
 export default {
@@ -299,7 +298,7 @@ export default {
       console.log(checkAll);
     },
     // 自定义节点 仅树形结构支持
-    renderContent(h, { node, data, store }) {
+    renderContent(h, { node, data }) {
       return (
         <span class="custom-tree-node">
           <span>{node.label}</span>
@@ -333,7 +332,6 @@ export default {
 </script>
 
 <style>
-
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
