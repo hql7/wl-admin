@@ -8,8 +8,15 @@ const routes = [
   {
     path: "/",
     redirect: {
-      name: "login"
+      name: "layout"
     }
+  },
+  // 主视图路由
+  {
+    path: "/layout",
+    name: "layout",
+    component: () => import("@/views/layout/index.vue"),
+    children: []
   },
   // 登录视图
   {
@@ -34,6 +41,11 @@ const routes = [
       withoutAuth: true
     },
     component: () => import("../views/error/404.vue")
+  },
+  // 404路由
+  {
+    path: "*",
+    redirect: "err404"
   }
 ];
 

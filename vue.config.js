@@ -1,4 +1,3 @@
-// const port = 6668; // dev port
 let styleVariables = require("./src/style/variables.scss.js");
 
 module.exports = {

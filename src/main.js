@@ -3,6 +3,10 @@
  */
 import vueRender from "./core/render";
 /**
+ * @name 导入路由、菜单初始化
+ */
+import "@/core/initRouterAndMenu.js";
+/**
  * @name 导入依赖加载
  */
 import "./core/install";

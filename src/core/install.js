@@ -5,8 +5,6 @@ import Vue from "vue";
 
 // 按需导入element-ui
 import "@/plugins/element.js";
-// 导入wl-ui
-import "@/plugins/wlui.js";
 // 导入需要全局注册的公共ui组件
 import "@/components/ui/install";
 
